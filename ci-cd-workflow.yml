@@ -1,3 +1,24 @@
+# =============================================================================
+# CI/CD WORKFLOW — SETUP INSTRUCTIONS
+# =============================================================================
+# v0's GitHub connection cannot push files inside `.github/workflows/`, so this
+# file lives at the project root instead. To activate the pipeline, recreate it
+# on GitHub (which has full permissions):
+#
+#   1. Go to your repo on github.com
+#   2. Click "Add file" -> "Create new file"
+#   3. Name the file EXACTLY:  .github/workflows/main.yml
+#      (typing the slashes creates the folders automatically)
+#   4. Paste everything BELOW the line of equals signs
+#   5. Commit to the `main` branch
+#
+# Then add these repository secrets under
+# Settings -> Secrets and variables -> Actions:
+#   - VERCEL_TOKEN       (vercel.com/account/tokens)
+#   - VERCEL_ORG_ID      (Vercel project settings / .vercel/project.json)
+#   - VERCEL_PROJECT_ID  (Vercel project settings / .vercel/project.json)
+# =============================================================================
+
 name: CI/CD
 
 # Trigger the pipeline on pushes and pull requests to the main branch.

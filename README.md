@@ -73,7 +73,14 @@ Tests:       13 passed, 13 total
 
 ## CI/CD Pipeline (GitHub Actions)
 
-The workflow is defined in [`.github/workflows/main.yml`](.github/workflows/main.yml) and runs on every push and pull request to `main`.
+The workflow definition lives in [`ci-cd-workflow.yml`](ci-cd-workflow.yml) at the project root and runs on every push and pull request to `main` once activated.
+
+> **Activation step:** v0's GitHub connection cannot push files inside `.github/workflows/`, so the workflow is shipped as `ci-cd-workflow.yml` at the repo root. To turn the pipeline on, recreate it on GitHub:
+>
+> 1. On github.com, open your repo and click **Add file → Create new file**
+> 2. Name it exactly `.github/workflows/main.yml` (the slashes create the folders)
+> 3. Paste the contents of `ci-cd-workflow.yml` (everything below the instruction header)
+> 4. Commit to the `main` branch
 
 ### Continuous Integration — `build-and-test`
 
@@ -107,7 +114,7 @@ Add these under **Settings → Secrets and variables → Actions** in your GitHu
 
 ```
 .
-├── .github/workflows/main.yml      # CI/CD pipeline
+├── ci-cd-workflow.yml              # CI/CD pipeline (copy to .github/workflows/main.yml on GitHub)
 ├── __tests__/                      # Unit & integration tests
 │   ├── cart-reducer.test.ts
 │   ├── product-card.test.tsx
