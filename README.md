@@ -4,7 +4,7 @@ A small e-commerce storefront built with **Next.js (App Router)**, **React 19**,
 
 ## Live Application
 
-🔗 **Live Demo:** https://YOUR-PROJECT.vercel.app
+🔗 **Live Demo:** https://v0-e-commerce-ci-cd.vercel.app/
 
 > Replace the URL above with your deployed Vercel link after the first successful deployment.
 
